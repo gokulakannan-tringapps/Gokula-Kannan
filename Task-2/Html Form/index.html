@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HTML FORM</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Registration Form</h1><br><br>
+		<div class="form">
+			<form>
+				<label for="fname"> First Name </label>
+				<input type="text" id="fname" name="fname" size=15 placeholder="Enter your name..."><br><br>
+				<label for="birthday">Date Of Birth </label>
+  				<input type="date" id="birthday" name="birthday"><br><br>
+				<label > Degree </label>
+				<select>
+				<option value="Not selected">Not selected</option>
+					<option value="bsc">B.Tech</option>
+					<option value="be">B.E</option>
+					<option value="msc">M.Sc</option>
+					<option value="mca">MCA</option>
+				</select><br><br>
+				<label> Gender </label><br>
+				<input type="radio" name="gender" id="male"/>
+				<label for="male">Male</label><br>
+				<input type="radio" name="gender" id ="female"/>
+				<label for="female">Female</label> <br><br>
+				<label>Phone</label>
+				<input type="text" name="phone" size="10" placeholder="Enter your mobile number"/><br><br>
+				Address<br>
+				<textarea cols="80" rows="5" value="Address"></textarea>
+				<br><br>
+				Email:  
+				<input type="email" id="email" name="email" placeholder="Enter your valid email"/> <br>    
+				<br> <br>  
+				Password:  
+				<input type="Password" id="pass" name="pass"> <br>  
+				<br> <br>  
+				Re-type password:  
+				<input type="Password" id="repass" name="repass"> <br> <br>  
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</body>
+</html>
