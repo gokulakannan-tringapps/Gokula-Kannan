@@ -18,7 +18,7 @@ nav{
 .head{
     background-color: rgb(122, 188, 245);
 }
-.feature{
+.features{
     display: flex;
     flex-wrap: wrap;
 }
