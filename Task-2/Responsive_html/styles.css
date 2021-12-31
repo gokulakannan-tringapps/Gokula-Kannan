@@ -1,0 +1,56 @@
+.head,.feat-1,.feat-2,.feat-3,.sign-in,.content{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+nav{
+    background-image: url(images/spriteimage.svg);
+    height: 40px;
+    width: 154px;
+    float: right;
+    background-position: -239px 43px;
+}
+.navi{
+    height: 40px;
+    background-color: rgb(2, 86, 160);
+    
+}
+.head{
+    background-color: rgb(122, 188, 245);
+}
+.feature{
+    display: flex;
+    flex-wrap: wrap;
+}
+.feat-1,.feat-2,.feat-3{
+    flex: 33%;
+    height: 250px;
+}
+.feat-1{
+    background-color: rgb(241, 171, 113);
+}
+.feat-2{
+    background-color: rgb(237, 92, 241);
+}
+.feat-3{
+    background-color: rgb(83, 238, 217);
+}
+.sign-in{
+    background-color: rgb(152, 206, 253);
+    flex-wrap: wrap;
+    flex: 33%;
+}
+.content{
+    background-color: rgb(211, 233, 253);
+    height: 250px ;
+}
+@media screen and (min-width:481px) and (max-width: 768px){
+    .feat-1,.feat-2,.feat-3,.sign-in,.content{
+        flex: 50%;
+    }
+}
+@media  screen and (min-width:320px) and (max-width: 480px){
+    .feat-1,.feat-2,.feat-3,.sign-in,.content{
+        flex: 100%;
+    }
+}
