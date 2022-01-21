@@ -1,1 +1,75 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQroWJcCLL3Qxv8UTKdlfZT4JHX7O8LqMdlug&usqp=CAU">
+    <link rel="stylesheet" href="style.css">
+    <title>CRUD Operations</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="head"><h1>Employee Details</h1></div>
+    <div class="container">
+        
+        <div class="subContainer">
+            <form id="crud_form">
+                <label for="name">Full Name : </label>
+                <input id="name" type="text" placeholder="Enter your Name" required>
+                <label for="dob">DOB  : </label>
+                <input id="dob" type="date" placeholder="Your Date of birth" required>
+				<label for="email">E-mail Id : </label>
+                <input id="email" type="text" placeholder="Enter your email" required>
+                <div class="gender">
+                    <label>Gender : </label>
+                    <input id="male" value="male" name="gender" type="radio" required>
+                    <label for="male">Male</label>
+                    <input id="female" value="female" name="gender" type="radio" required>
+                    <label for="female" >Female</label>
+                </div>
+                <label for="nation">Nationality : </label>
+                <select id="nation" required>
+                    <option>Select country</option>
+                    <option>England</option>
+					<option>India</option>
+                    <option>USA</option>
+					<option>Australia</option>
+                </select>
+                <label for="number">Phone Number : </label>
+                <input type="number" id="number" placeholder="Enter your number" required>
+                <label for="address">Address : </label>
+                <textarea id="address" placeholder="your address" value="addresses" required></textarea>
+                <div class="interest">
+                    <label>Languages Known </label><br><br>
+                    <label><input id="english" value="English" type="checkbox" name="language">English</label><br><br>
+                    <label><input id="tamil" value="Tamil" type="checkbox" name="language">Tamil</label><br><br>
+                    <label><input id="malayalam" value="Malayalam" type="checkbox" name="language">Malayalam</label>
+                </div>
+                <div class="btn">
+					<br>
+                    <input id="sub" type="submit" >
+                </div>
+            </form>
+        </div>
+        <div class="table">
+            <table>
+                <tbody>
+                    <tr>
+                        <th class="Name">Name</th>
+                        <th class="DOB">DOB</th>
+						<th class="Email">Email</th>
+                        <th class="Gender">Gender</th>
+                        <th class="Nationality">Nationality</th>
+                        <th class="Phonenumber">Phone Number</th>
+                        <th class="address">Address</th>
+                        <th class="Language">Languages</th>
+                        <th class="action">Action</th>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>
