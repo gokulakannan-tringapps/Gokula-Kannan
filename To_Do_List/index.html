@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>To do list</title>
+		<style>
+			body{
+				 background-color: #c9d4cc;
+			}
+			.header{
+			 	background-color:#dc83f2;
+			 	padding:20px 20px;
+			 	color:#fcba03;
+			 	text-align:center;
+			 	font-size:25px;
+			}
+			input{
+				width:40%;
+				padding:10px 10px;
+			}
+			button{
+				width:10%;
+				padding:10px 10px;
+				background-color:#8d82ed;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container-1" class="header">
+		<h2>My To Do List</h2>
+		<input type="text" id="userinput" placeholder="Enter your items..">
+		<button onclick="addNew()" >ADD</button>
+		<button onclick="clearItems()" >CLEAR</button>
+		<button onclick="deleteItems()" >DELETE ALL</button>
+		<button onclick="save()" >SAVE</button>
+		<button onclick="show()" >SHOW</button>
+	
+		</div>
+		<ul id="MyList">
+			
+		</ul>
+		<script>
+			
+			var count=0;
+			function addNew(){
+				var item=document.createTextNode(document.getElementById('userinput').value);
+				var li=document.createElement("li");
+				li.setAttribute("class","list");
+				li.setAttribute("value",count+1);
+				li.setAttribute("onclick","completed("+count+")");
+				var br=document.createElement("br");
+				li.appendChild(item);
+				document.getElementById("MyList").appendChild(br);
+				document.getElementById("MyList").appendChild(li);
+				document.getElementById('userinput').value="";
+				count++;
+			}
+			function clearItems(){
+				var clr=document.getElementsByClassName('list');
+				for(let i=0;i<clr.length;i++)
+				{
+					if(clr[i].style["text-decoration"]=="line-through")
+						document.getElementById("MyList").removeChild(clr[i]);
+				}
+			}
+			function deleteItems(){
+				var dlt=document.getElementById("MyList").innerHTML="";
+				
+			}
+			function completed(nos){
+					var myList=document.getElementsByClassName('list');
+					for(let i=0;i<myList.length;i++)
+					{
+						if(myList[i].value==nos+1)
+						{
+							myList[i].style="text-decoration: line-through";
+						}
+					}	
+			}
+			function save(){
+				var data=document.getElementById("MyList");
+				localStorage.setItem('save',data.innerHTML);
+				alert('Saved Successfully');
+				MyList.innerHTML="";
+    				
+			}
+			function show(){
+    				
+    				var view = localStorage.getItem('save');
+  				document.getElementById("MyList").innerHTML = view;
+			}
+			
+		</script>
+			
+	</body>
+</html>

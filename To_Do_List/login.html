@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LOGIN-PAGE</title>
+		<style>
+			body{
+			background-color:#d4ccb6;
+			}
+			h2{
+			color:#db69a4;
+			margin-top: 5%;
+			}
+			.container-1{
+				padding:5px 5px;
+				margin-left:40%;
+				border-style: solid;
+				margin-right:38%;
+				margin-top:5%;
+			}
+			input{
+				margin-top:2%;
+				padding: 10px 10px;
+				
+			}
+			input[type=submit]{
+				margin-left:35%;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<h2 align="middle">LOGIN PAGE</h2>
+		<form action="index.html" method="post" >
+			<div class="container-1">
+				<label for="uname" style="color:#445c24"><b>Username</b></label><br>
+				<input type="email" id="uname" Placeholder="Enter your username" name="uname" required><br><br>
+				<label for="pass" style="color:#445c24"><b>Password</b></label><br>
+				<input type="password" id="pass" Placeholder="Enter your password" name="pass" required><br><br>
+				<input id="login" type="submit" value="Login" onclick="return check()">
+			</div>
+			<h3 align="middle">Don't have an account ? <a href="signup.html" >REGISTER</a></h3>
+			
+		</form>
+		<script>
+			function check(){
+			 var storedName=localStorage.getItem('name');
+			 var storedPass=localStorage.getItem('pass');
+			 var username=document.getElementById('uname');
+			 var password=document.getElementById('pass');
+			
+			 	
+			 if(username.value==storedName && password.value==storedPass)
+			 {
+			 	alert("Login Successfully");
+			 	return true;
+			 	
+			 }
+			 else{
+			 	alert("Incorrect Username or Password");
+			 	return false;
+			 }	
+			}
+			
+		</script>	
+	</body>
+</html>
