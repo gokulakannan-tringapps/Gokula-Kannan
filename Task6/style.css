@@ -1,0 +1,58 @@
+.container {
+    background-color: #87d2de;
+    padding: 25px 0 30px 0;
+    margin-top: 5%;
+}
+
+.tab {
+    background-color: #d18e36;
+    color: black;
+    padding: 20px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.tab:after {
+    float: right;
+    content: '\002B';
+}
+
+.active:after {
+    float: right;
+    content: "\2212";
+}
+
+.content {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: 1s ease-in;
+    color: black;
+}
+
+.content a {
+    font-size: 25px;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.header {
+    text-align: center;
+    font-size: 30px;
+    color: rgb(231, 5, 252);
+}
+@media screen and (min-width:481px) and (max-width:768px){
+    .container{
+        flex: 50%;
+        background-color: #87d2de;
+    }
+}
+@media screen and (min-width:320px) and (max-width:480px){
+    .container{
+        flex: 100%;
+        background-color: chartreuse;
+    }
+}
