@@ -21,7 +21,7 @@ var myForm=document.querySelector("#crud_form");
             }
             document.getElementById("nation").value=obj[ans].Nationality;
             document.getElementById("number").value=obj[ans].Phonenumber;
-            myAdd=document.getElementById("address").value=obj[ans].address;
+            
             if(obj[ans].checkValue[0]){
                 document.getElementById("english").checked=true;
             }
@@ -31,7 +31,7 @@ var myForm=document.querySelector("#crud_form");
             if(obj[ans].checkValue[2]){
                 document.getElementById("malayalam").checked=true;
             }
-                
+            document.getElementById("address").value=obj[ans].address;
             var myBtn=document.querySelector(".btn");
             if(flag==0){
                 var mySub=document.getElementById("sub");
@@ -85,16 +85,17 @@ var myForm=document.querySelector("#crud_form");
             if(document.getElementById("malayalam").checked){
                 myLanguage[i++]=`${document.getElementById("malayalam").value} `;
             }
-            var temp=[];
-            temp["Name"]=myName.value;
-            temp["DOB"]=myDOB.value;
-			temp["Email"]=myEmail.value;
-            temp["Gender"]=myGen;
-            temp["Nationality"]=myNation.value;
-            temp["Phonenumber"]=myNum.value;
-            temp["address"]=myAdd.value;
-            temp["Language"]=myLanguage;
-            temp["checkValue"]=check;
+            let temp={
+            Name:myName.value;
+            DOB:myDOB.value;
+	    Email:myEmail.value;
+            Gender:myGen;
+            Nationality:myNation.value;
+            Phonenumber:myNum.value;
+            address:myAdd.value;
+            Language:myLanguage;
+            checkValue:check;
+	    }
             obj[ans]=temp;
             var myTr=document.createElement("tr");
             myTr.setAttribute("class","details");
