@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<title>Sign-Up</title>
 		<style>
+			h1{
+				text-align:center;
+			}
 			.cnt{
 				margin-left:40%;
-				
+				font-weight: bold;
+				font-style: italic;
 			}
 			button{
 				background-color:#aab830;
@@ -23,20 +27,20 @@
 		</style>
 	</head>
 	<body>
-		<h1 align="middle">Registration Form</h1>
+		<h1 >Registration Form</h1>
 		<form action="login.html" method="post" >
 		<div class="cnt">
-			<label for="name" style="color:#a33622"><b><i>NAME</i></b></label><br>
+			<label for="name" style="color:#a33622">NAME</label><br>
 			<input type="text" id="name" placeholder="Enter your name" name="Name" required><br><br>
-			<label for="age" style="color:#a33622"><b><i>AGE</i></b></label><br>
+			<label for="age" style="color:#a33622">AGE</label><br>
 			<input type="number" min="18" id="age" placeholder="Enter your age" name="Age" required><br><br>
-			<label for="mobile" style="color:#a33622"><b><i>MOBILE</i></b></label><br>
+			<label for="mobile" style="color:#a33622">MOBILE</label><br>
 			<input type="tel" id="mobile" placeholder="Enter your mobile number" name="Mobile" required><br><br>
-			<label for="email" style="color:#a33622"><b><i>E-MAIL</i></b></label><br>
+			<label for="email" style="color:#a33622">E-MAIL</label><br>
 			<input type="email" id="email" placeholder="Enter your mail id" name="Email" required><br><br>	
-			<label for="pass" style="color:#a33622"><b><i>PASSWORD</i></b></label><br>
+			<label for="pass" style="color:#a33622">PASSWORD</label><br>
 			<input type="password" id="pass" placeholder="Enter your password" name="Pass" required><br><br>
-			<label for="repass" style="color:#a33622"><b><i>RE-TYPE PASSWORD</i></b></label><br>
+			<label for="repass" style="color:#a33622">RE-TYPE PASSWORD</label><br>
 			<input type="password" id="repass" placeholder="Re-enter your password" name="RePass" required><br><br>
 			<button onclick="save()">CREATE</button>
 			</div>	
