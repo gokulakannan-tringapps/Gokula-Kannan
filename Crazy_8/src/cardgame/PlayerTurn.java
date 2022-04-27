@@ -60,26 +60,85 @@ public class PlayerTurn {
         return Objects.hash(playerId, drewACard, playedCard, declaredSuit);
     }
     
+   /*result will print players win*/
+    public void result(Players_Action player1,Players_Action player2, List<Card> Deck) {
+    	if(player1.play_Cards.size()==0)
+    	{
+    		System.out.println("player1 Wins");
+    		System.out.println("player1 Inhand Cards : " + player1.play_Cards.size());
+    		System.out.println("player2 Inhand Cards : " + player2.play_Cards.size());
+    		System.out.println("Remaining Deck size : " + Deck.size());
+    		
+    	}
+    	else if(player2.play_Cards.size()==0)
+    	{
+    		System.out.println("player2 Wins");
+    		System.out.println("player1 Inhand Cards : " + player1.play_Cards.size());
+    		System.out.println("player2 Inhand Cards : " + player2.play_Cards.size());
+    		System.out.println("Remaining Deck size : " + Deck.size());
+    	}
+    	else if(Deck.size()==0)
+    	{
+    		System.out.println("Deck is Empty");
+    		System.out.println("player1 Inhand Cards : " + player1.play_Cards.size());
+    		System.out.println("player2 Inhand Cards : " + player2.play_Cards.size());
+    		System.out.println("Remaining Deck size : " + Deck.size());
+    	}
+    	else {
+    		System.out.println("Someone Cheated");
+    		System.out.println("player1 Inhand Cards : " + player1.play_Cards.size());
+    		System.out.println("player2 Inhand Cards : " + player2.play_Cards.size());
+    		System.out.println("Remaining Deck size : " + Deck.size());
+    	}
+    }
+    
+    /*start game controls the gameflow */
+    /*player 1 --  object for player1 */
+    /*player 2 --  object for player2 */
     public void start_game(Players_Action player1,Players_Action player2, List<Card> Deck) {
-    	
     	player1.TopCard=Deck.get(0);
     	Deck.remove(0);
     	System.out.println("\nTop Card :"+ player1.TopCard.getSuit()+" "+ player1.TopCard.getRank());
     	boolean flag1=true,flag2=true;
+    	player1.changeSuit=0;
+    	player2.changeSuit=0;
     	while(true) {
-    		flag1=player1.play();
-    		if(flag1==false) {
+    		if(player1.play_Cards.size()==0 || player2.play_Cards.size()==0 || Deck.size()==0 ) {
+    			result(player1,player2,Deck);
     			break;
     		}
-    		else {
-    			player2.TopCard=player1.TopCard;
+    		if(player2.changeSuit==0) {
+    			flag1=player1.play();
+    			
+    			if(flag1==false) {
+        			player1.drawFromDeck(Deck);
+        			flag1=player1.play();
+        			player2.TopCard=player1.TopCard;
+        		}
+        		else {
+        			player2.TopCard=player1.TopCard;
+        		}
     		}
-    		flag2=player2.play();
-    		if(flag2==false) {
-    			break;
-    		}
     		else {
+    			player2.Playfor8(player1.Change);
     			player1.TopCard=player2.TopCard;
+    			player2.changeSuit=0;
+    		}
+    		if(player1.changeSuit==0) {
+    				flag2=player2.play();
+    				if(flag2==false) {
+    						player2.drawFromDeck(Deck);
+    						flag2=player2.play();
+    						player1.TopCard=player2.TopCard;
+    				}
+    				else {
+    						player1.TopCard=player2.TopCard;
+    				}
+    		 }
+    		else {
+    			player1.Playfor8(player2.Change);
+    			player2.TopCard=player1.TopCard;
+    			player1.changeSuit=0;
     		}
     	}
     	
